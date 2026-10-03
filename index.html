@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>קו 66 – רדיו רוק, בלוז, פולק, קאנטרי ואינדי</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Suez+One&display=swap">
+<style>
+:root{--bg:#0b0618;--card:#150d2b;--fg:#f1ebff;--mut:#a99cc9;--acc:#b45cff;--line:#35246a;--sage:#d49bff;--on:#0b0618;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f4efff;--card:#e7defb;--fg:#1d1038;--mut:#5d5280;--acc:#7a1fe0;--line:#cfc1f0;--sage:#7a1fe0;--on:#fff}}
+:root[data-theme="light"]{--bg:#f4efff;--card:#e7defb;--fg:#1d1038;--mut:#5d5280;--acc:#7a1fe0;--line:#cfc1f0;--sage:#7a1fe0;--on:#fff}
+:root[data-theme="dark"]{--bg:#0b0618;--card:#150d2b;--fg:#f1ebff;--mut:#a99cc9;--acc:#b45cff;--line:#35246a;--sage:#d49bff;--on:#0b0618}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;padding-bottom:96px;background:radial-gradient(900px 420px at 85% -5%,color-mix(in srgb,var(--acc) 30%,transparent),transparent),var(--bg);color:var(--fg);font:400 17px/1.7 Heebo,Arial,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.logo{font-family:"Suez One",Georgia,serif;font-size:26px}
+nav a{color:var(--mut);text-decoration:none;margin-inline-start:18px}
+nav a:hover,nav a:focus-visible{color:var(--acc)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+h1{font:400 clamp(44px,9vw,92px)/1.05 "Suez One",Georgia,serif;margin:44px 0 10px}
+h2{font:400 32px/1.2 "Suez One",Georgia,serif;margin:0 0 20px}
+.lead{max-width:34em;color:var(--mut);font-size:19px;margin:0 0 30px}
+.tuner{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 22px 18px}
+.dial{direction:ltr;position:relative;height:84px;border-bottom:2px solid var(--line);overflow:hidden}
+.tick{position:absolute;bottom:0;width:1px;height:12px;background:var(--mut);opacity:.6}
+.tick.l{height:24px}
+.tick b{position:absolute;bottom:28px;left:-14px;width:28px;text-align:center;font:400 12px Heebo,sans-serif;color:var(--mut)}
+.needle{position:absolute;bottom:0;top:0;width:3px;background:var(--acc);box-shadow:0 0 14px var(--acc);transition:left .7s cubic-bezier(.3,.8,.3,1)}
+.stations{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.stations button{font:600 15px Heebo,sans-serif;color:var(--fg);background:transparent;border:1px solid var(--line);border-radius:999px;padding:6px 16px;cursor:pointer}
+.stations button[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:var(--on)}
+.now{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.play{box-shadow:0 0 22px var(--acc);width:68px;height:68px;border-radius:50%;border:0;background:var(--acc);color:var(--on);font-size:26px;cursor:pointer;flex:none}
+[hidden]{display:none!important}
+.freq{text-shadow:0 0 18px var(--acc);font:400 40px/1 "Suez One",Georgia,serif;color:var(--acc)}
+.now p{margin:4px 0 0;color:var(--mut);max-width:32em}
+.status{font-size:14px;color:var(--mut);margin-top:12px}
+section{padding:64px 0 0}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:right;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--sage);white-space:nowrap}
+.tw{overflow-x:auto}
+footer{margin-top:72px;padding:28px 0 40px;border-top:1px solid var(--line);color:var(--mut);font-size:15px}
+footer a{color:var(--acc)}
+.np{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--card);border-top:1px solid var(--acc);box-shadow:0 -4px 24px color-mix(in srgb,var(--acc) 35%,transparent);padding:10px 20px calc(10px + env(safe-area-inset-bottom,0px))}
+.np .in{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:14px}
+.eq{display:flex;gap:3px;align-items:flex-end;height:26px;flex:none}
+.eq i{width:4px;background:var(--acc);border-radius:2px;animation:eq 1s ease-in-out infinite alternate}
+.np.off .eq i{animation-play-state:paused}
+.eq i:nth-child(2){animation-delay:.2s}.eq i:nth-child(3){animation-delay:.4s}.eq i:nth-child(4){animation-delay:.1s}
+@keyframes eq{from{height:5px}to{height:26px}}
+.np .tx{flex:1;min-width:0;line-height:1.35}
+.np .tx small{color:var(--mut);display:block}
+.np .tx strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar{height:4px;background:var(--line);border-radius:2px;margin-top:6px;overflow:hidden}
+.bar div{height:100%;width:0;background:var(--acc);box-shadow:0 0 8px var(--acc)}
+.nx{color:var(--mut);font-size:14px;max-width:30%;text-align:left}
+@media (max-width:640px){.nx{display:none}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.chips button{font:600 15px Heebo,sans-serif;color:var(--fg);background:transparent;border:1px solid var(--line);border-radius:999px;padding:6px 16px;cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:var(--on)}
+.djs{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px}
+.dj{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.av{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;font:400 28px "Suez One",Georgia,serif;color:var(--on);background:linear-gradient(135deg,var(--acc),var(--sage));box-shadow:0 0 18px color-mix(in srgb,var(--acc) 55%,transparent)}
+.dj h3{font:400 22px/1.3 "Suez One",Georgia,serif;margin:14px 0 0}
+.dj .sh{color:var(--sage);font-weight:600}
+.dj .tm{color:var(--mut);font-size:14px;margin:0 0 8px}
+.dj p{margin:8px 0;font-size:16px;line-height:1.6}
+.dj .rec{border-top:1px solid var(--line);padding-top:10px;margin-top:12px;color:var(--mut);font-size:15px}
+@media (prefers-reduced-motion:reduce){.needle{transition:none}.eq i{animation:none;height:14px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="logo">קו 66</div><nav><a href="#top">ראשי</a><a href="#djs">מגישים</a><a href="#luach">לוח שידורים</a><a href="#contact">צרו קשר</a></nav></header>
+
+<main id="home">
+<h1>הכביש פתוח.<br>הגיטרות דולקות.</h1>
+<p class="lead">תחנת רדיו אינטרנטית לאוהבי רוק, בלוז, פולק רוק, קאנטרי ואינדי רוק. סובבו את הכפתור, בחרו תדר והקשיבו.</p>
+
+<div class="tuner" aria-label="מקלט רדיו">
+<div class="dial" id="dial"><div class="needle" id="needle"></div></div>
+<div class="stations" id="stations" role="group" aria-label="בחירת סגנון"></div>
+<div class="now">
+<button class="play" id="play" aria-label="נגן">▶</button>
+<div><div class="freq" id="freq"></div><strong id="gname"></strong><p id="gdesc"></p></div>
+</div>
+<div class="status" id="status" aria-live="polite"></div>
+</div>
+
+<section id="luach">
+<h2>לוח שידורים</h2>
+<div class="tw"><table>
+<tr><th>שעות</th><th>ראשון–חמישי</th><th>שישי</th><th>שבת</th></tr>
+<tr><th>06:00–10:00</th><td>פולק רוק בדרך לעבודה</td><td>קאנטרי של בוקר</td><td>פולק רוק לאט</td></tr>
+<tr><th>10:00–14:00</th><td>אינדי רוק</td><td>אינדי רוק</td><td>בלוז בסלון</td></tr>
+<tr><th>14:00–18:00</th><td>רוק קלאסי ומודרני</td><td>רוק על הגג</td><td>קאנטרי וכבישים</td></tr>
+<tr><th>18:00–23:00</th><td>בלוז בלילה</td><td>רוק ובלוז חי</td><td>אינדי רוק ערב</td></tr>
+</table></div>
+</section>
+
+<section id="about">
+<h2>עלינו</h2>
+<p class="lead">קו 66 משדרת מוזיקה עם גיטרות, סיפורים וקצת אבק מהדרך. אנחנו מערבבים אמנים מוכרים עם הרבה יוצרים עצמאיים שכדאי להכיר, ומשדרים בלי הפסקה, כל היום.</p>
+</section>
+</main>
+<main id="djs" hidden>
+<h1 style="font-size:clamp(40px,8vw,72px)">הקולות של קו 66</h1>
+<p class="lead">חמישה מגישים, חמישה סגנונות. כל אחד מביא את המוזיקה שהוא אוהב ואת הסיפור שמאחוריה.</p>
+<div class="chips" id="chips" role="group" aria-label="סינון לפי סגנון"></div>
+<div class="djs" id="djlist"></div>
+</main>
+
+<footer id="contact">
+יצירת קשר והצעות לשירים: <a href="mailto:hello@example.com">hello@example.com</a><br>
+השידור: <a href="https://radioparadise.com" rel="noopener">Radio Paradise – Rock Mix</a><br>© קו 66 – רדיו
+</footer>
+</div>
+
+<div class="np" id="np"><div class="in">
+<div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<div class="tx"><small>מנגן עכשיו</small><strong id="npt"></strong><div class="bar"><div id="npb"></div></div></div>
+<div class="nx" id="npn"></div></div></div>
+<script>
+// סטרים פתוח של Radio Paradise. אפשר להחליף בכתובת סטרים משלכם, או להגדיר שדה u לכל סגנון ברשימה G
+var STREAM_URL = "https://stream.radioparadise.com/rock-flac";
+var STREAM_NAME = "Radio Paradise – Rock Mix";
+var G = [
+ {f:88.5,n:"בלוז",d:"גיטרות איטיות, קולות חצי-צרודים ושירים שמרגישים כמו שעת לילה מאוחרת."},
+ {f:91.2,n:"פולק רוק",d:"שירים אקוסטיים עם אנרגיה של להקה, מילים טובות והרמוניות."},
+ {f:94.0,n:"קאנטרי",d:"פדל סטיל, כבישים ארוכים וסיפורים שמסתיימים טוב (לפעמים)."},
+ {f:97.3,n:"אינדי רוק",d:"להקות עצמאיות, צליל גולמי ומוזיקה שעוד לא שמעתם."},
+ {f:101.1,n:"רוק",d:"ריפים, תופים וקולות גבוהים: מהקלאסיקות ועד ההווה."}
+];
+var MIN=87,MAX=103,cur=0,audio=null,playing=false;
+var $=function(i){return document.getElementById(i)};
+function pos(f){return (f-MIN)/(MAX-MIN)*100}
+var dial=$("dial");
+for(var v=MIN;v<=MAX;v+=0.5){
+  var t=document.createElement("div");var big=Number.isInteger(v)&&v%2===1;
+  t.className="tick"+(Number.isInteger(v)?" l":"");t.style.left=pos(v)+"%";
+  if(big){t.innerHTML="<b>"+v+"</b>"}
+  dial.appendChild(t);
+}
+G.forEach(function(g,i){
+  var b=document.createElement("button");b.textContent=g.n;b.setAttribute("aria-pressed","false");
+  b.onclick=function(){tune(i)};$("stations").appendChild(b);
+});
+function tune(i){
+  cur=i;var g=G[i];
+  $("needle").style.left="calc("+pos(g.f)+"% - 1px)";
+  $("freq").textContent=g.f.toFixed(1)+" FM";
+  $("gname").textContent=g.n;$("gdesc").textContent=g.d;
+  [].forEach.call($("stations").children,function(b,k){b.setAttribute("aria-pressed",k===i?"true":"false")});
+  if(playing&&audio&&g.u&&audio.src!==g.u){audio.src=g.u;audio.play()}
+  npRender();
+}
+function setStatus(s){$("status").textContent=s}
+function playUrl(){return G[cur].u||STREAM_URL}
+function setPlaying(v){playing=v;$("play").textContent=v?"❚❚":"▶";$("play").setAttribute("aria-label",v?"השהה":"נגן");npRender()}
+$("play").onclick=function(){
+  var u=playUrl();
+  if(!u){setStatus("השידור עדיין לא מחובר.");return}
+  if(!audio){audio=new Audio();audio.onerror=function(){if(!playing)return;setPlaying(false);setStatus("השידור נותק. נסו שוב בעוד רגע.")}}
+  if(playing){audio.pause();audio.removeAttribute("src");audio.load();setPlaying(false);setStatus("");return}
+  setStatus("מתחבר לשידור...");
+  audio.src=u;
+  audio.play().then(function(){setPlaying(true);setStatus("מנגן עכשיו: "+STREAM_NAME)}).catch(function(){setPlaying(false);setStatus("לא הצלחנו להתחבר לשידור. נסו שוב בעוד רגע.")});
+};
+
+function npRender(){
+  $("npt").textContent=playing?STREAM_NAME+" · שידור חי":"לחצו על ▶ כדי להתחיל להאזין";
+  $("npb").style.width=playing?"100%":"0";
+  $("npn").textContent=G[cur].n;
+  $("np").classList.toggle("off",!playing);
+}
+// מגישים (שמות ופרטים לדוגמה)
+var D=[
+ ["נועה ברק","הכביש הפתוח","ראשון–חמישי, 06:00–10:00","פולק רוק","מתחילה את הבוקר עם גיטרה אקוסטית, קפה ושירים שמלווים נסיעה ארוכה.","Heart of Gold – Neil Young"],
+ ["איתי שחר","מרתף האינדי","ראשון–חמישי, 10:00–14:00","אינדי רוק","מחפש להקות קטנות לפני שכולם שומעים עליהן, ומארח יוצרים מקומיים באולפן.","Last Nite – The Strokes"],
+ ["דנה לוין","ווליום עשר","ראשון–חמישי, 14:00–18:00","רוק","מחברת בין ריפים קלאסיים ללהקות חדשות, בדרך כלל בעוצמה גבוהה מדי.","Black Dog – Led Zeppelin"],
+ ["אבי כהן","בלוז בשעת לילה","ראשון–חמישי, 18:00–23:00","בלוז","גיטרות איטיות וסיפורים מהדרום האמריקאי. תוכנית ללילות שקטים.","The Thrill Is Gone – B.B. King"],
+ ["מאיה רוזן","אבק וקאנטרי","שישי ושבת, בוקר","קאנטרי","קאנטרי מכל הדורות, מהקלאסיקות של נאשוויל ועד הזמרות החדשות.","Jolene – Dolly Parton"]
+];
+var fl="הכל";
+function djRender(){
+  var c=$("chips");c.innerHTML="";
+  ["הכל"].concat(G.map(function(g){return g.n})).forEach(function(n){
+    var b=document.createElement("button");b.textContent=n;b.setAttribute("aria-pressed",n===fl?"true":"false");
+    b.onclick=function(){fl=n;djRender()};c.appendChild(b);
+  });
+  $("djlist").innerHTML=D.filter(function(d){return fl==="הכל"||d[3]===fl}).map(function(d){
+    return '<article class="dj"><div class="av">'+d[0].charAt(0)+'</div><h3>'+d[0]+'</h3><div class="sh">'+d[1]+'</div><p class="tm">'+d[2]+' · '+d[3]+'</p><p>'+d[4]+'</p><div class="rec">ההמלצה שלי: '+d[5]+'</div></article>';
+  }).join("");
+}
+function route(){
+  var h=location.hash,d=h==="#djs";
+  $("djs").hidden=!d;$("home").hidden=d;
+  var e=!d&&h.length>1&&h!=="#top"?document.getElementById(h.slice(1)):null;
+  if(e)e.scrollIntoView();else window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);
+djRender();route();
+tune(4);
+</script>
+</body>
+</html>
