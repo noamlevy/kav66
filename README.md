@@ -2,4 +2,4 @@
 
 Hebrew (RTL) internet radio site: rock, blues, folk, country and indie. Single static page: `index.html`.
 
-Live site: https://YOUR-USERNAME.github.io/kav66/
+Live site: https://noamlevy.github.io/kav66/
